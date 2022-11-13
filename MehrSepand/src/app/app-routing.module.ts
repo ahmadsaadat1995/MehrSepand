@@ -10,9 +10,9 @@ const routes: Routes = [
   { path: 'Home', component: HomeComponent },
   { path: 'ViewEmployee/:employeeId', component: ViewEmployeeComponent },
   { path: 'AddEmployee', component: AddEmployeeComponent },
-  { path: 'EditEmployee/:employeeId', component: EditEmployeeComponent } 
+  { path: 'EditEmployee/:employeeId', component: EditEmployeeComponent }
 ];
-  
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

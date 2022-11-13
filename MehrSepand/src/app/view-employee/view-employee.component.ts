@@ -12,24 +12,24 @@ export class ViewEmployeeComponent implements OnInit {
 
   employeeId: any;
   employeeDetail : any= [];
-   
+
   constructor(public webApiService: WebApiService, private route: ActivatedRoute, private httpProvider : HttpProviderService) { }
-  
+
   ngOnInit(): void {
-    this.employeeId = this.route.snapshot.params['employeeId'];      
+    this.employeeId = this.route.snapshot.params['employeeId'];
     this.getEmployeeDetailById();
   }
 
-  getEmployeeDetailById() {       
-    this.httpProvider.getEmployeeDetailById(this.employeeId).subscribe((data : any) => {      
+  getEmployeeDetailById() {
+    this.httpProvider.getEmployeeDetailById(this.employeeId).subscribe((data : any) => {
       if (data != null && data.body != null) {
         var resultData = data.body;
         if (resultData) {
-          this.employeeDetail = resultData;
+          this.employeeDetail = resultData[this.employeeId]
         }
       }
     },
-    (error :any)=> { }); 
+    (error :any)=> { });
   }
 
 }

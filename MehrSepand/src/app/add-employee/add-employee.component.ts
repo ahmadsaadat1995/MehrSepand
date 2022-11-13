@@ -17,7 +17,7 @@ export class AddEmployeeComponent implements OnInit {
 
   isSubmitted: boolean = false;
 
-  constructor(private router: Router, private httpProvider: HttpProviderService, 
+  constructor(private router: Router, private httpProvider: HttpProviderService,
     private toastr: ToastrService) { }
 
   ngOnInit(): void {
@@ -28,7 +28,6 @@ export class AddEmployeeComponent implements OnInit {
     if (isValid) {
       this.httpProvider.saveEmployee(this.addEmployeeForm).subscribe(async data => {
         if (data != null && data.body != null) {
-          if (data != null && data.body != null) {
             var resultData = data.body;
             if (resultData != null && resultData.isSuccess) {
               this.toastr.success(resultData.message);
@@ -36,7 +35,6 @@ export class AddEmployeeComponent implements OnInit {
                 this.router.navigate(['/Home']);
               }, 500);
             }
-          }
         }
       },
         async error => {

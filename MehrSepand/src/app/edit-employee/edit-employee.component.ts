@@ -31,12 +31,12 @@ export class EditEmployeeComponent implements OnInit {
       if (data != null && data.body != null) {
         var resultData = data.body;
         if (resultData) {
-          this.editEmployeeForm.Id = resultData.id;
-          this.editEmployeeForm.FirstName = resultData.firstName;
-          this.editEmployeeForm.LastName = resultData.lastName;
-          this.editEmployeeForm.Email = resultData.email;
-          this.editEmployeeForm.Address = resultData.address;
-          this.editEmployeeForm.Phone = resultData.phone;
+          this.editEmployeeForm.Id = resultData[this.employeeId].id;
+          this.editEmployeeForm.FirstName = resultData[this.employeeId].firstName;
+          this.editEmployeeForm.LastName = resultData[this.employeeId].lastName;
+          this.editEmployeeForm.Email = resultData[this.employeeId].email;
+          this.editEmployeeForm.Address = resultData[this.employeeId].address;
+          this.editEmployeeForm.Phone = resultData[this.employeeId].phone;
         }
       }
     },
